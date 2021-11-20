@@ -1,7 +1,29 @@
+/* Welcome to the amazing (and sometimes irritating) world of CSS!
+ * 
+ * This document is meant to introduce you to introduce some of the basic 
+ * selectors and styling properties you'll see when adding CSS to your application.
+ * 
+ * For more references + cheat sheets I recommend checking out:
+ *
+ * - https://www.w3schools.com/w3css/defaulT.asp (Great intro resouce)
+ * - https://developer.mozilla.org/en-US/docs/Web/CSS (Also great intro resource)
+ * - https://htmlcheatsheet.com/css/ (Great CSS Cheat Sheet to look at)
+ *
+ */
+
+
+/* The * selector selects every element in your DOM (Document Object Model) 
+ * and applies the defined styling to everything!
+ */
 * {
   font-family: 'Montserrat', sans-serif;
 }
 
+/* Elements */
+
+/* This is an example of a element selector which applies styling to EVERY instance
+ * of this element.
+ */
 body {
   background: linear-gradient(
     90deg, rgba(144,56,186,1) 0%, rgba(26,24,105,1) 100%);
@@ -10,7 +32,20 @@ body {
   margin: 0;
 }
 
-#login-card-container {
+a {
+  text-decoration: none;
+  padding: 10px;
+  background-color: #1f196c;
+  color: white;
+  border-radius: 5px;
+}
+
+/* IDs */
+
+/* This is an example of a id selector where it applies all styling to 
+ * the ONE (emphasis on the one) element.
+ */
+#card-container {
   position: relative;
   display: flex;
   flex-direction: column;
@@ -20,7 +55,12 @@ body {
   width: 100%;
 }
 
-.login-card {
+/* Classes */
+
+/* This is an example of a class selector where it applies all styling to 
+ * MULTIPLE elements which use this class name.
+ */
+.card {
   background: white;
   text-align: center;
   padding: 16px 33px;
@@ -29,7 +69,7 @@ body {
   width: 450px;
 }
 
-.login-card__form {
+.card__form {
   display: flex;
   flex-direction: column;
   justify-content: center; 
@@ -37,18 +77,24 @@ body {
 
 }
 
-.login-card h1 {
+
+/*
+ * This is an example of selecting all h1 elements in the .card class
+ * and applies styling to ONLY those h1s. This selector takes more precedence 
+ * than any element selectors before.
+ */
+.card h1 {
   font-size: 60px;
   margin: 0 0 15px;
 }
 
-.login-card__form__label {
+.card__form__label {
   text-align: left;
   font-size: 17px;
   color: #5C5C5C;
 }
 
-.login-card__form__textbox {
+.card__form__textbox {
   
   background: #ECECEC;
   border: none;
@@ -60,15 +106,15 @@ body {
 
 }
 
-.login-card__form__textbox:hover {
+.card__form__textbox:hover {
   border: 1px solid #c4c4c4;
 }
 
-.login-card__form__textbox:active {
+.card__form__textbox:active {
   border: 1px solid black;
 }
 
-.login-card__form__submit {
+.card__form__submit {
   background: #BC66E5;
   border: none;
   color: white;
@@ -79,15 +125,33 @@ body {
   border-radius: 10px;
   box-shadow: 0px 4px 4px #1f196c;
 }
-.login-card__form__submit:hover {
+
+/* This is an example of a pseudo class which allow you to add styling to different states
+ * of an element. The example below is a state when the element is hovered on by the mouse.
+ */
+.card__form__submit:hover {
   background: #9944c2;
 }
-.login-card__form__submit:active {
+/* 
+ * This is another example of a pseudo class which adds styling to a element that has been
+ * activated --> ex) been clicked on.
+ */
+.card__form__submit:active {
   background: #592075;
 }
+.link-wrapper {
+  margin: 10px;
+}
 
+
+/* 
+ * This is an example of a media query. It's main purpose is to allow your application
+ * to be responsive to different screen sizes: Desktop, Tabel and mobile
+ *
+ * Use this link to learn more about media queries and how to make your app responsive:
+ */
 @media (max-width: 575px) {
-  .login-card {
+  .card {
     width: 81%;
   }
 }
