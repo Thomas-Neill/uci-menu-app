@@ -56,15 +56,15 @@
 				<label class="card__form__label" for="fusername">Username</label>
 				<!-- This is an element which takes input from a user. Ex) Clicking, typing, etc. -->
 				<!-- There are A LOT of input types, please checkout: https://www.javatpoint.com/html-form-input-types -->
-				<input class="card__form__textbox" type="textbox" name="fusername">
+				<input id="si_username" class="card__form__textbox" type="textbox" name="fusername">
 				
 				
 				<label class="card__form__label" for="fpassword">Password</label>
-				<input class="card__form__textbox" type="password" name="fpassword">
+				<input id="si_password" class="card__form__textbox" type="password" name="fpassword">
 				
 				<!-- This creates a button on the screen which can be interacted with the onClick Event Hander -->
 				<!-- A Event/Function can be created in you linked javascript file. -->
-				<button class="card__form__submit">SUBMIT</button>
+				<button class="card__form__submit" onclick="verify(event)">SUBMIT</button>
 
 
 			</form>

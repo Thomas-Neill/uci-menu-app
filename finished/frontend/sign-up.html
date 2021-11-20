@@ -23,12 +23,12 @@
 			<h1>SIGN UP</h1>
 			<form id="form" class="card__form">
 				<label class="card__form__label" for="fusername">Username</label>
-				<input class="card__form__textbox" type="textbox" name="fusername">
+				<input id="su_username" class="card__form__textbox" type="textbox" name="fusername">
 				<label class="card__form__label" for="fpassword">Password</label>
-				<input class="card__form__textbox" type="textbox" name="fpassword">
+				<input id="su_password" class="card__form__textbox" type="textbox" name="fpassword">
 				<label class="card__form__label" for="fpassword-confirm">Confirm Password</label>
 				<input class="card__form__textbox" type="password" name="fpassword-confirm">
-				<button class="card__form__submit">SUBMIT</button>
+				<button class="card__form__submit" onclick="signup(event)">SUBMIT</button>
 			</form>
 			<div class="link-wrapper">
 				<a href="sign-in.html">Sign In</a>
