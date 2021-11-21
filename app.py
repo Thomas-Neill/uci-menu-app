@@ -13,7 +13,7 @@ waitingOthers = []
 
 @app.route("/",methods=['GET'])
 def hi():
-    return {'pog':True}
+    return {'amogus':'imposter'}
 
 @app.route("/search/",methods=['GET'])
 def search():
