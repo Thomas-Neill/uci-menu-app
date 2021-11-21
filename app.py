@@ -4,6 +4,7 @@ from flask.templating import render_template
 from flask_cors import CORS
 import sqlite3 as sl
 import datetime
+import requests
 
 app = Flask(__name__)
 CORS(app)
@@ -80,3 +81,11 @@ def autocomplete():
     query = f"SELECT DISTINCT name FROM menu WHERE name LIKE '%{C}%' LIMIT 5"
 
     return {'body':list(i[0] for i in cur.execute(query))}
+
+apiKey = "24442074-8042608e9c23ab8f856de31c7"
+
+@app.route('/pics/',methods=['GET'])
+def fetchPicture():
+    q=request.args.get('q')
+    res = requests.get(f"https://pixabay.com/api/?key={apiKey}&q={q}&category=food&perPage=1")
+    return res.text
