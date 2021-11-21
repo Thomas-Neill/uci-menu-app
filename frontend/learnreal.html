@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap-theme.min.css" integrity="sha384-6pzBo3FDv/PJ8r2KRkGHifhEocL+1X2rVCTTkUfGk7/0pbek5mMa1upzvWbrUbOZ" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://unpkg.com/@popperjs/core@2"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+    <script src="index2.js"></script>
+    <link rel="stylesheet" href="src/style2.css">
+    <title>Menu</title>
+</head>
+<body>
+    <div class= "jumbotron text-center">
+            <h1>Dining Hall Menu</h1>
+        <!--   
+        </div>
+            <div class="dropdown">
+                <button class="btn btn-outline-primary btn-lg dropright-toggle" type="button" data-toggle="dropdown">Filter by Food Type
+                <span class="caret"></span></button>
+                <ul class="dropdown-menu">
+                  <li><a  id = "Entree" href="#">Entree</a></li>
+                  <li><a   id = "Sides" href="#">Sides</a></li>
+                  <li><a  id = "Pizza" href="#">Pizza</a></li>
+                  <li><a id= "Dessert" href="#">Dessert</a></li>
+                  <li><a id= "Deli" href="#">Deli</a></li>
+                </ul>
+              </div>
+              <div class="dropdown">
+                <button class="btn btn-outline-primary btn-lg dropright-toggle" type="button" data-toggle="dropdown">Meal
+                <span class="caret"></span></button>
+                <ul class="dropdown-menu">
+                  <li><a  id = "Breakfast" href="#">Breakfast</a></li>
+                  <li><a   id = "Lunch" href="#">Lunch</a></li>
+                  <li><a  id = "Dinner" href="#">Dinner</a></li>
+                </ul>
+              </div>
+          </div>--> 
+</div>
+    </div>
+      <div class="md-form active-purple active-purple-2 mb-3">
+        <input class="form-control" type="text" placeholder="Search" aria-label="Search">
+      </div>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+      <button class = "btn btn-outline-primary btn-lg" data-toggle="collapse" data-target="#more-filters">More Options</button>
+      <div id="more-filters" class="collapse">
+        <fieldset>
+          <legend style = "font-size 10px">Restrictions</legend>
+          <div>
+            <input type="checkbox" id="vegan" name="dietary-restriction" value="vegan">
+            <label for="vegan">Vegan</label>
+          </div>
+          <div>
+            <input type="checkbox" id="vegetarian" name="dietary-restriction" value="vegetarian">
+            <label for="vegetarian">Vegetarian</label>
+          </div>
+          <legend style = "font-size 10px">Meals</legend>
+          <div>
+            <input type="checkbox" id="Breakfast" name="mealtype" value="Breakfast">
+            <label for="Breakfast">Breakfast</label>
+          </div>
+          <div>
+            <input type="checkbox" id="Lunch" name="mealtype" value="Lunch">
+            <label for="Lunch">Lunch</label>
+          </div>
+          <div>
+            <input type="checkbox" id="Dinner" name="mealtype" value="Dinner">
+            <label for="Dinner">Dinner</label>
+          </div>
+          <legend style = "font-size 10px">Food Type</legend>
+          <div>
+            <input type="checkbox" id="Entree" name="FoodType" value="Entree">
+            <label for="Entree">Entree</label>
+          </div>
+          <div>
+            <input type="checkbox" id="Sides" name="FoodType" value="Sides">
+            <label for="Sides">Sides</label>
+          </div>
+          <div>
+            <input type="checkbox" id="Pizza" name="FoodType" value="Pizza">
+            <label for="Pizza">Pizza</label>
+          </div>
+          <div>
+            <input type="checkbox" id="Dessert" name="FoodType" value="Dessert">
+            <label for="Dessert">Dessert</label>
+          </div>
+          <div>
+            <input type="checkbox" id="Deli" name="FoodType" value="Deli">
+            <label for="Deli">Deli</label>
+          </div>
+        </fieldset>
+      </div>
+    </body>
+</html>
