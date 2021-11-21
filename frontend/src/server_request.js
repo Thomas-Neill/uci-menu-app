@@ -71,7 +71,7 @@ async function json_search(event)
     const brunch_meal = []
     const dinner_meal = []
 
-    for( let  i = 0; i < return_json.length(), ++i)
+    for( let  i = 0; i < return_json.length(); ++i)
     {
         if(return_json[i].meal = "breakfast")
         {
@@ -103,4 +103,5 @@ async function json_search(event)
             brunch: brunch_meal,
             dinner: dinner_meal
         }
-});
+        })
+};
