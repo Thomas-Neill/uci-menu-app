@@ -3,6 +3,8 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="src/server_request.js"></script>
     <script
 			  src="https://code.jquery.com/jquery-3.6.0.min.js"
 			  integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
@@ -139,19 +141,19 @@
     
     </div>
     
-    <!-- <div class="container">
+    <div class="container">
       <div id="meal_data">
           <ol>
               <li v-for="meal in meals">
                 <h5> {{meal.name}}</h5>
                 <h6> {{meal.calories}} calories</h6>
-                <p> {{meal.blurb}}</p>
+                <p v-if='meal.blurb!==None'> {{meal.blurb}}</p>
               </li>
           </ol>
       </div>
-    </div> -->
-    <script src="src/index2.js"></script>
-    <script src="src/server_request.js"></script>
+    </div>
+
+    
 
 </body>
 </html>
