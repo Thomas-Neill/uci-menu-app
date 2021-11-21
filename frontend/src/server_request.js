@@ -1,4 +1,15 @@
+var data = {
+    meals: [],
+    breakfast: [],
+    lunch: [],
+    brunch: [],
+    dinner: []
+};
 
+var mealdata = new Vue({
+    el: '#meal_data',
+    data: data
+});
 
 function get_type()
 {
@@ -93,16 +104,11 @@ async function json_search(event)
         }
     }
 
-    var mealdata = new Vue({
-        el: '#meal_data',
-        data: {
-            meals: return_json,
-            breakfast: breakfast_meal,
-            lunch: lunch_meal,
-            brunch: brunch_meal,
-            dinner: dinner_meal
-        }
-        })
+    data.meals = return_json;
+    data.breakfast = breakfast_meal,
+    data.lunch= lunch_meal;
+    data.brunch= brunch_meal;
+    data.dinner= dinner_meal;
 
     document.getElementById("meal_data").style.display = "block"
 };

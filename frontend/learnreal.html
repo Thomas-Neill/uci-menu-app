@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
-    <script src="src/server_request.js"></script>
+    
     <script
 			  src="https://code.jquery.com/jquery-3.6.0.min.js"
 			  integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
@@ -140,10 +140,10 @@
     <div class="container mt-5" id="meal_data" style='display:none'>
       <div class="row">
         <div class="col">
-          <h2 class="text-center">The Anteatery</h2>
+          <h2 class="text-center ml-5">The Anteatery</h2>
 
           <div class="container">
-              <ul>
+              <ul style="list-style-type:none">
                   <!-- <li v-for="meal in meals" v-if='meal.area=="TheAnteatery"'>
                     <h5> {{meal.name}}</h5>
                     <h6> {{meal.calories}} calories</h6>
@@ -207,10 +207,10 @@
         </div>
   
         <div class="col">
-          <h2 class="text-center">Brandywine</h2>
+          <h2 class="text-center ml-5">Brandywine</h2>
 
           <div class="container">
-              <ul>
+              <ul style="list-style-type:none">
                   <!-- <li v-for="meal in meals" v-if='meal.area=="Brandywine"'>
                     <h5> {{meal.name}}</h5>
                     <h6> {{meal.calories}} calories</h6>
@@ -277,7 +277,8 @@
     </div>
     
     
-    
+    <script src="src/index2.js"></script>
+    <script src="src/server_request.js"></script>
 
 </body>
 </html>
