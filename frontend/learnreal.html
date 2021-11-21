@@ -10,30 +10,39 @@
     <script src="index2.js"></script>
     <link rel="stylesheet" href="src/style2.css">
     <title>Menu</title>
+
 </head>
-    <body)>
+
+    <body>
       <div style="background:linear-gradient(to bottom, #ffffff 0%, #f0edea 100%) !important" class= "jumbotron text-center">
               <h1 style="font-family:Apple Chancery, cursive;font-size:70px">Dining Hall Menu</h1>
               <p style = "font-family:URW Chancery L, cursive;font-size:25px">Anteatery & Brandywine</p>
+              <p><img src="https://cdn0.iconfinder.com/data/icons/e-commerce-207/1024/food-512.png"alt ="food" 
+                width="22" 
+                height="26">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/1/14/PixelApple.png" alt="Food Item" 
+              width="25" 
+              height="25">
+            </p>
+            
+              
 
     <div class="container">
       <div class="md-form active-purple active-purple-2 mb-3">
         <input class="form-control" id="keyword" type="text" placeholder="Search" aria-label="Search">
       </div>
-      <button class = "btn btn-outline-info btn-lg" data-toggle="collapse" data-target="#more-filters">More Options</button>
+      <button class = "btn btn-info btn-lg" data-toggle="collapse" data-target="#more-filters">More Options</button>
     </div>
       
 
     <div id="more-filters" class="collapse">
       <fieldset>
-
         <div class="container">
           <div class="row">
-
             <div class="col">
-              <legend>Restrictions</legend>
+              <legend style = "margin-top:0.5em">Restrictions</legend>
               <div>
-                <input type="checkbox" id="vegan" name="dietary-restriction" value="vegan">
+                <input type="checkbox"  id="vegan" name="dietary-restriction" value="vegan">
                 <label for="vegan">Vegan</label>
               </div>
               <div>
@@ -43,26 +52,26 @@
             </div>
 
             <div class="col">
-              <legend>Meals</legend>
+              <legend style = "margin-top:0.5em">Meals</legend>
 
               <div class="row">
                 <div class="col">
-                  <input type="checkbox" id="meal" name="mealtype" value="Breakfast">
+                  <input type="checkbox" id="meal1" name="mealtype" value="Breakfast">
                   <label for="Breakfast">Breakfast</label>
                 </div>
                 <div class="col">
-                  <input type="checkbox" id="meal" name="mealtype" value="Brunch">
+                  <input type="checkbox" id="meal2" name="mealtype" value="Brunch">
                   <label for="Brunch">Brunch</label>
                 </div>
               </div>
               
               <div class="row">
                 <div class="col">
-                  <input type="checkbox" id="meal" name="mealtype" value="Lunch">
+                  <input type="checkbox" id="meal3" name="mealtype" value="Lunch">
                   <label for="Lunch">Lunch</label>
                 </div>
                 <div class="col">
-                  <input type="checkbox" id="meal" name="mealtype" value="Dinner">
+                  <input type="checkbox" id="meal4" name="mealtype" value="Dinner">
                   <label for="Dinner">Dinner</label>
                 </div>
               </div>
@@ -70,29 +79,29 @@
             </div>
             
             <div class="col">
-              <legend>Food Type</legend>
+              <legend style = "margin-top:0.5em">Food Type</legend>
               <div class="row">
                 <div class="col">
-                  <input type="checkbox" id="types" name="FoodType" value="Entree">
+                  <input type="checkbox" id="type1" name="FoodType" value="Entree">
                   <label for="Entree">Entree</label>
                 </div>
                 <div class="col">
-                  <input type="checkbox" id="types" name="FoodType" value="Sides">
+                  <input type="checkbox" id="type2" name="FoodType" value="Sides">
                   <label for="Sides">Sides</label>
                 </div>
                 <div class="col">
-                  <input type="checkbox" id="types" name="FoodType" value="Pizza">
+                  <input type="checkbox" id="type3" name="FoodType" value="Pizza">
                   <label for="Pizza">Pizza</label>
                 </div>
               </div>
               
               <div class="row">
                 <div class="col-4">
-                  <input type="checkbox" id="types" name="FoodType" value="Deli">
+                  <input type="checkbox" id="type4" name="FoodType" value="Deli">
                   <label for="Deli">Deli</label>
                 </div>
                 <div class="col-4">
-                  <input type="checkbox" id="types" name="FoodType" value="Dessert">
+                  <input type="checkbox" id="type5" name="FoodType" value="Dessert">
                   <label for="Dessert">Dessert</label>
                 </div>
               </div>
@@ -108,15 +117,46 @@
                 <input type="number" id="calories" min="0" class="form-control" />
                 <label class="form-label" for="calories">Max Calories</label>
               </div>
-              
             </div>
           </div>
+
+          <button class = "btn btn-outline-info btn-sm float-right" onclick="json_search(event)">Submit</button>
 
         </div>
 
       </fieldset>
     </div>
+
+
+    <div class="container mt-5">
+      <div class="row">
+        <div class="col">
+          <h2 class="text-center">The Anteatery</h2>
+
+        </div>
+  
+        <div class="col">
+          <h2 class="text-center">Brandywine</h2>
+  
+        </div>
+
+      </div>
       
+
+  </div>
+    <!-- <div class="container">
+      <div id="meal_data">
+          <ol>
+              <li v-for="meal in meals">
+                <h5> {{meal.name}}</h5>
+                <h6> {{meal.calories}} calories</h6>
+                <p> {{meal.blurb}}</p>
+              </li>
+          </ol>
+      </div>
+    </div> -->
+
+    <script src="src/server_request.js"></script>
 
 </body>
 </html>
