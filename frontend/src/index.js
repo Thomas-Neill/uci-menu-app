@@ -1,3 +1,9 @@
+async function getPeer() {
+    
+}
+
+
+
 async function verify(event) {
     event.preventDefault();
 
