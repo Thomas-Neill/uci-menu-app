@@ -93,8 +93,6 @@ async function json_search(event)
         }
     }
 
-    console.log(breakfast_meal);
-
     var mealdata = new Vue({
         el: '#meal_data',
         data: {
