@@ -126,15 +126,35 @@
     </div>
     
 
-    <div class="container mt-5">
+    <div class="container mt-5" id="meal_data">
       <div class="row">
         <div class="col">
           <h2 class="text-center">The Anteatery</h2>
+
+          <div class="container">
+              <ul>
+                  <li v-for="meal in meals" v-if='meal.area=="TheAnteatery"'>
+                    <h5> {{meal.name}}</h5>
+                    <h6> {{meal.calories}} calories</h6>
+                    <p v-if='meal.blurb!=="None"'> {{meal.blurb}}</p>
+                  </li>
+              </ul>
+          </div>
 
         </div>
   
         <div class="col">
           <h2 class="text-center">Brandywine</h2>
+
+          <div class="container">
+              <ul>
+                  <li v-for="meal in meals" v-if='meal.area=="Brandywine"'>
+                    <h5> {{meal.name}}</h5>
+                    <h6> {{meal.calories}} calories</h6>
+                    <p v-if='meal.blurb!=="None"'> {{meal.blurb}}</p>
+                  </li>
+              </ul>
+          </div>
   
         </div>
 
@@ -143,19 +163,7 @@
     
     </div>
     
-    <div class="container">
-      <div id="meal_data">
-          <ol>
-              <li v-for="meal in meals">
-                <h5> {{meal.name}}</h5>
-                <h6> {{meal.calories}} calories</h6>
-                <p v-if='meal.blurb!==None'> {{meal.blurb}}</p>
-              </li>
-          </ol>
-      </div>
-    </div>
-
-    <script src='src/index2.js'></script>
+    
     
 
 </body>
