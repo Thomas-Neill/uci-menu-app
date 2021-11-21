@@ -3,11 +3,16 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="src/server_request.js"></script>
+    <script
+			  src="https://code.jquery.com/jquery-3.6.0.min.js"
+			  integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+			  crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-    <script src="index2.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/xcash/bootstrap-autocomplete@v2.3.7/dist/latest/bootstrap-autocomplete.min.js"></script>
     <link rel="stylesheet" href="src/style2.css">
     <title>Menu</title>
 
@@ -29,7 +34,7 @@
 
     <div class="container">
       <div class="md-form active-purple active-purple-2 mb-3">
-        <input class="form-control" id="keyword" type="text" placeholder="Search" aria-label="Search">
+        <input class="form-control basicAutoComplete" id="keyword" type="text" placeholder="Search" aria-label="Search" data-url="auto/" autocomplete="off">
       </div>
       <button class = "btn btn-info btn-lg" data-toggle="collapse" data-target="#more-filters">More Options</button>
     </div>
@@ -112,51 +117,61 @@
 
           <div class="row">
             <div class="col">
-              <legend>Calories</legend>
+              <legend style = "margin-top:0.5em">Calories</legend>
               <div class="form-outline">
                 <input type="number" id="calories" min="0" class="form-control" />
                 <label class="form-label" for="calories">Max Calories</label>
               </div>
             </div>
-          </div>
-
-          <button class = "btn btn-outline-info btn-sm float-right" onclick="json_search(event)">Submit</button>
-
-        </div>
+          
 
       </fieldset>
     </div>
 
+    <div class="container">
+      <button class = "btn btn-outline-info btn-sm float-right" onclick="json_search(event)">Submit</button>
+    </div>
+    
 
-    <div class="container mt-5">
+    <div class="container mt-5" id="meal_data" style='display:none'>
       <div class="row">
         <div class="col">
           <h2 class="text-center">The Anteatery</h2>
+
+          <div class="container">
+              <ul>
+                  <li v-for="meal in meals" v-if='meal.area=="TheAnteatery"'>
+                    <h5> {{meal.name}}</h5>
+                    <h6> {{meal.calories}} calories</h6>
+                    <p v-if='meal.blurb!=="None"'> {{meal.blurb}}</p>
+                  </li>
+              </ul>
+          </div>
 
         </div>
   
         <div class="col">
           <h2 class="text-center">Brandywine</h2>
+
+          <div class="container">
+              <ul>
+                  <li v-for="meal in meals" v-if='meal.area=="Brandywine"'>
+                    <h5> {{meal.name}}</h5>
+                    <h6> {{meal.calories}} calories</h6>
+                    <p v-if='meal.blurb!=="None"'> {{meal.blurb}}</p>
+                  </li>
+              </ul>
+          </div>
   
         </div>
 
       </div>
       
-
-  </div>
-    <!-- <div class="container">
-      <div id="meal_data">
-          <ol>
-              <li v-for="meal in meals">
-                <h5> {{meal.name}}</h5>
-                <h6> {{meal.calories}} calories</h6>
-                <p> {{meal.blurb}}</p>
-              </li>
-          </ol>
-      </div>
-    </div> -->
-
-    <script src="src/server_request.js"></script>
+    
+    </div>
+    
+    
+    <script src="src/index2.js"></script>
 
 </body>
 </html>
