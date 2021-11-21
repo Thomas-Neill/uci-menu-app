@@ -48,10 +48,10 @@ async function json_search(event)
     searchdata.append('keyword',document.getElementById('keyword').value)
     searchdata.append('vegan',(document.getElementById('vegan').checked).toString())
     if (document.getElementById('calories').value == ""){
-        searchdata.append('calories',"-1")
+        searchdata.append('calories',-1)
     }
     else{
-        searchdata.append('calories',"document.getElementById('calories').value")
+        searchdata.append('calories',document.getElementById('calories').value)
     }
     
     searchdata.append('vegetarian',(document.getElementById('vegetarian').checked).toString())
