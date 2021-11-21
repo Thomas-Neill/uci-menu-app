@@ -59,4 +59,6 @@ async function json_search(event)
             meals: return_json
         }
         });
+
+    document.getElementById("meal_data").style.display='block'
 };
