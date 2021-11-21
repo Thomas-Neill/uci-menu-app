@@ -15,30 +15,39 @@
     <script src="https://cdn.jsdelivr.net/gh/xcash/bootstrap-autocomplete@v2.3.7/dist/latest/bootstrap-autocomplete.min.js"></script>
     <link rel="stylesheet" href="src/style2.css">
     <title>Menu</title>
+
 </head>
-<body>
-    <div class= "jumbotron text-center">
-      <h1>Dining Hall Menu</h1>
-    </div>
+
+    <body>
+      <div style="background:linear-gradient(to bottom, #ffffff 0%, #f0edea 100%) !important" class= "jumbotron text-center">
+              <h1 style="font-family:Apple Chancery, cursive;font-size:70px">Dining Hall Menu</h1>
+              <p style = "font-family:URW Chancery L, cursive;font-size:25px">Anteatery & Brandywine</p>
+              <p><img src="https://cdn0.iconfinder.com/data/icons/e-commerce-207/1024/food-512.png"alt ="food" 
+                width="22" 
+                height="26">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/1/14/PixelApple.png" alt="Food Item" 
+              width="25" 
+              height="25">
+            </p>
+            
+              
 
     <div class="container">
       <div class="md-form active-purple active-purple-2 mb-3">
         <input class="form-control basicAutoComplete" id="keyword" type="text" placeholder="Search" aria-label="Search" data-url="auto/" autocomplete="off">
       </div>
-      <button class="btn btn-outline-primary btn-lg" id="keyword-button" data-toggle="collapse" data-target="#more-filters">More Options</button>
+      <button class = "btn btn-info btn-lg" data-toggle="collapse" data-target="#more-filters">More Options</button>
     </div>
       
 
     <div id="more-filters" class="collapse">
       <fieldset>
-
         <div class="container">
           <div class="row">
-
             <div class="col">
-              <legend>Restrictions</legend>
+              <legend style = "margin-top:0.5em">Restrictions</legend>
               <div>
-                <input type="checkbox" id="vegan" name="dietary-restriction" value="vegan">
+                <input type="checkbox"  id="vegan" name="dietary-restriction" value="vegan">
                 <label for="vegan">Vegan</label>
               </div>
               <div>
@@ -48,7 +57,7 @@
             </div>
 
             <div class="col">
-              <legend>Meals</legend>
+              <legend style = "margin-top:0.5em">Meals</legend>
 
               <div class="row">
                 <div class="col">
@@ -75,7 +84,7 @@
             </div>
             
             <div class="col">
-              <legend>Food Type</legend>
+              <legend style = "margin-top:0.5em">Food Type</legend>
               <div class="row">
                 <div class="col">
                   <input type="checkbox" id="type1" name="FoodType" value="Entree">
@@ -108,21 +117,19 @@
 
           <div class="row">
             <div class="col">
-              <legend>Calories</legend>
+              <legend style = "margin-top:0.5em">Calories</legend>
               <div class="form-outline">
                 <input type="number" id="calories" min="0" class="form-control" />
                 <label class="form-label" for="calories">Max Calories</label>
               </div>
             </div>
-          </div>
-
-        </div>
+          
 
       </fieldset>
     </div>
 
     <div class="container">
-      <button class = "btn btn-primary btn-sm float-right" onclick="json_search(event)">SUBMIT</button>
+      <button class = "btn btn-outline-info btn-sm float-right" onclick="json_search(event)">Submit</button>
     </div>
     
 
