@@ -59,8 +59,7 @@ async function json_search(event)
     const params = new URLSearchParams(searchdata);
 
 
-    console.log("http://127.0.0.1:5000/search?" + params)
-    const response = await fetch("http://127.0.0.1:5000/search?" + params.toString(),{
+    const response = await fetch("/search/?" + params.toString(),{
         method: 'GET',
     });
 
@@ -93,6 +92,8 @@ async function json_search(event)
             dinner_meal.push(return_json[i])
         }
     }
+
+    console.log(breakfast_meal);
 
     var mealdata = new Vue({
         el: '#meal_data',
