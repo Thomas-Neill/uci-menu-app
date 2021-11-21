@@ -1,5 +1,5 @@
 from flask import Flask
-from flask import request
+from flask import request, send_from_directory
 from flask.templating import render_template
 from flask_cors import CORS
 import sqlite3 as sl
@@ -11,9 +11,9 @@ CORS(app)
 
 waitingOthers = []
 
-@app.route("/",methods=['GET'])
-def hi():
-    return {'amogus':'imposter'}
+@app.route("/<path:path>",methods=['GET'])
+def hi(path):
+    return send_from_directory('frontend',path)
 
 @app.route("/search/",methods=['GET'])
 def search():
@@ -77,6 +77,6 @@ def autocomplete():
     cur = conn.cursor()
     C = request.args.get('q')
 
-    query = f"SELECT DISTINCT name FROM menu WHERE name LIKE '{C}%' LIMIT 5"
+    query = f"SELECT DISTINCT name FROM menu WHERE name LIKE '%{C}%' LIMIT 5"
 
-    return list(cur.execute(query))
+    return {'body':list(i[0] for i in cur.execute(query))}
