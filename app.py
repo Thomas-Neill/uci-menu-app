@@ -75,7 +75,7 @@ def search():
 def autocomplete():
     conn = sl.connect('menu.db')
     cur = conn.cursor()
-    C = request.args.get('cur')
+    C = request.args.get('q')
 
     query = f"SELECT DISTINCT name FROM menu WHERE name LIKE '{C}%' LIMIT 5"
 
