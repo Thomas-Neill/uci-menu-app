@@ -41,11 +41,14 @@ def search():
     mealMap = {'dinner':107,'breakfast':49,'brunch':2651,'lunch':106}
     Periods = {107:'dinner',49:'breakfast',2651:'brunch',106:'lunch'}
     if meal:
-        constraints.append(f"meal={mealMap[meal]}")
+        ms = meal.split(",")
+
+        constraints.append("(" + " OR ".join(f"meal={mealMap[m]}" for m in ms) + ")")
     if keyword != "":
         constraints.append(f"name LIKE '%{keyword}%'")
     if foodtype != "":
-        constraints.append(f"foodtype LIKE '%{foodtype}%'")
+        fs = foodtype.split(",")
+        constraints.append("(" + " OR ".join(f"foodtype LIKE '%{f}%'" for f in fs) + ")")
     if place != "":
         constraints.append(f"area LIKE '%{place}%'")
     
