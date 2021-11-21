@@ -104,4 +104,6 @@ async function json_search(event)
             dinner: dinner_meal
         }
         })
+
+    document.getElementById("meal_data").style.display = "block"
 };
