@@ -133,12 +133,64 @@
 
           <div class="container">
               <ul>
-                  <li v-for="meal in meals" v-if='meal.area=="TheAnteatery"'>
+                  <!-- <li v-for="meal in meals" v-if='meal.area=="TheAnteatery"'>
                     <h5> {{meal.name}}</h5>
                     <h6> {{meal.calories}} calories</h6>
                     <p v-if='meal.blurb!=="None"'> {{meal.blurb}}</p>
-                  </li>
+                  </li> -->
+                  
+                  <div class="container">
+                    <h3 v-if='breakfast.length!==0'>
+                      Breakfast
+                    </h3>
+                    <li v-for="meal in breakfast" v-if='meal.area=="TheAnteatery"'>
+                      <h5> {{meal.name}}</h5>
+                      <h6> {{meal.calories}} calories</h6>
+                      <p v-if='meal.blurb!=="None"'> {{meal.blurb}}</p>
+                    </li>
+
+                  </div>
+                  
+                  <div class="container">
+                    <h3 v-if='brunch.length!==0'>
+                      Brunch
+                    </h3>
+                    <li v-for="meal in brunch" v-if='meal.area=="TheAnteatery"'>
+                      <h5> {{meal.name}}</h5>
+                      <h6> {{meal.calories}} calories</h6>
+                      <p v-if='meal.blurb!=="None"'> {{meal.blurb}}</p>
+                    </li>
+
+                  </div>
+                  
+                  <div class="container">
+                    <h3 v-if='lunch.length!==0'>
+                      Lunch
+                    </h3>
+                    <li v-for="meal in lunch" v-if='meal.area=="TheAnteatery"'>
+                      <h5> {{meal.name}}</h5>
+                      <h6> {{meal.calories}} calories</h6>
+                      <p v-if='meal.blurb!=="None"'> {{meal.blurb}}</p>
+                    </li>
+
+                  </div>
+                  
+                  <div class="container">
+                    <h3 v-if='dinner.length!==0'>
+                      Dinner
+                    </h3>
+                    <li v-for="meal in dinner" v-if='meal.area=="TheAnteatery"'>
+                      <h5> {{meal.name}}</h5>
+                      <h6> {{meal.calories}} calories</h6>
+                      <p v-if='meal.blurb!=="None"'> {{meal.blurb}}</p>
+                    </li>
+
+                  </div>
+                  
+
               </ul>
+
+              
           </div>
 
         </div>
@@ -148,11 +200,61 @@
 
           <div class="container">
               <ul>
-                  <li v-for="meal in meals" v-if='meal.area=="Brandywine"'>
+                  <!-- <li v-for="meal in meals" v-if='meal.area=="Brandywine"'>
                     <h5> {{meal.name}}</h5>
                     <h6> {{meal.calories}} calories</h6>
                     <p v-if='meal.blurb!=="None"'> {{meal.blurb}}</p>
-                  </li>
+                  </li> -->
+                  <div class="container">
+                    <h3 v-if='breakfast.length!==0'>
+                      Breakfast
+                    </h3>
+                    <li v-for="meal in breakfast" v-if='meal.area=="Brandywine"'>
+                      <h5> {{meal.name}}</h5>
+                      <h6> {{meal.calories}} calories</h6>
+                      <p v-if='meal.blurb!=="None"'> {{meal.blurb}}</p>
+                    </li>
+
+                  </div>
+
+                  <div class="container">
+                    <h3 v-if='brunch.length!==0'>
+                      Brunch
+                    </h3>
+                    <li v-for="meal in brunch" v-if='meal.area=="Brandywine"'>
+                      <h5> {{meal.name}}</h5>
+                      <h6> {{meal.calories}} calories</h6>
+                      <p v-if='meal.blurb!=="None"'> {{meal.blurb}}</p>
+                    </li>
+
+                  </div>
+
+                  
+                  <div class="container">
+                    <h3 v-if='lunch.length!==0'>
+                      Lunch
+                    </h3>
+                    <li v-for="meal in lunch" v-if='meal.area=="Brandywine"'>
+                      <h5> {{meal.name}}</h5>
+                      <h6> {{meal.calories}} calories</h6>
+                      <p v-if='meal.blurb!=="None"'> {{meal.blurb}}</p>
+                    </li>
+
+                  </div>
+                  
+                  <div class="container">
+                    <h3 v-if='dinner.length!==0'>
+                      Dinner
+                    </h3>
+                    <li v-for="meal in dinner" v-if='meal.area=="Brandywine"'>
+                      <h5> {{meal.name}}</h5>
+                      <h6> {{meal.calories}} calories</h6>
+                      <p v-if='meal.blurb!=="None"'> {{meal.blurb}}</p>
+                    </li>
+
+                  </div>
+                  
+
               </ul>
           </div>
   

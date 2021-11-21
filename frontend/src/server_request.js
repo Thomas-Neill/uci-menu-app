@@ -83,22 +83,22 @@ async function json_search(event)
 
     for( let  i = 0; i < return_json.length; ++i)
     {
-        if(return_json[i].meal = "breakfast")
+        if(return_json[i].meal == "breakfast")
         {
             breakfast_meal.push(return_json[i])
         }
 
-        if(return_json[i].meal = "lunch")
+        if(return_json[i].meal == "lunch")
         {
             lunch_meal.push(return_json[i])
         }
 
-        if(return_json[i].meal = "brunch")
+        if(return_json[i].meal == "brunch")
         {
             brunch_meal.push(return_json[i])
         }
 
-        if(return_json[i].meal = "dinner")
+        if(return_json[i].meal == "dinner")
         {
             dinner_meal.push(return_json[i])
         }
