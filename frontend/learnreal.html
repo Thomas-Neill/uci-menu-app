@@ -3,48 +3,29 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="src/server_request.js"></script>
+    <script
+			  src="https://code.jquery.com/jquery-3.6.0.min.js"
+			  integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+			  crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-    <script src="index2.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/xcash/bootstrap-autocomplete@v2.3.7/dist/latest/bootstrap-autocomplete.min.js"></script>
     <link rel="stylesheet" href="src/style2.css">
     <title>Menu</title>
 </head>
 <body>
     <div class= "jumbotron text-center">
-            <h1>Dining Hall Menu</h1>
-        <!--   
-        </div>
-            <div class="dropdown">
-                <button class="btn btn-outline-primary btn-lg dropright-toggle" type="button" data-toggle="dropdown">Filter by Food Type
-                <span class="caret"></span></button>
-                <ul class="dropdown-menu">
-                  <li><a  id = "Entree" href="#">Entree</a></li>
-                  <li><a   id = "Sides" href="#">Sides</a></li>
-                  <li><a  id = "Pizza" href="#">Pizza</a></li>
-                  <li><a id= "Dessert" href="#">Dessert</a></li>
-                  <li><a id= "Deli" href="#">Deli</a></li>
-                </ul>
-              </div>
-              <div class="dropdown">
-                <button class="btn btn-outline-primary btn-lg dropright-toggle" type="button" data-toggle="dropdown">Meal
-                <span class="caret"></span></button>
-                <ul class="dropdown-menu">
-                  <li><a  id = "Breakfast" href="#">Breakfast</a></li>
-                  <li><a   id = "Lunch" href="#">Lunch</a></li>
-                  <li><a  id = "Dinner" href="#">Dinner</a></li>
-                </ul>
-              </div>
-          </div>--> 
-
+      <h1>Dining Hall Menu</h1>
     </div>
 
     <div class="container">
       <div class="md-form active-purple active-purple-2 mb-3">
-        <input class="form-control" id="keyword" type="text" placeholder="Search" aria-label="Search">
+        <input class="form-control basicAutoComplete" id="keyword" type="text" placeholder="Search" aria-label="Search" data-url="auto/" autocomplete="off">
       </div>
-      <button class = "btn btn-outline-primary btn-lg" data-toggle="collapse" data-target="#more-filters">More Options</button>
+      <button class="btn btn-outline-primary btn-lg" id="keyword-button" data-toggle="collapse" data-target="#more-filters">More Options</button>
     </div>
       
 
@@ -71,22 +52,22 @@
 
               <div class="row">
                 <div class="col">
-                  <input type="checkbox" id="meal" name="mealtype" value="Breakfast">
+                  <input type="checkbox" id="meal1" name="mealtype" value="Breakfast">
                   <label for="Breakfast">Breakfast</label>
                 </div>
                 <div class="col">
-                  <input type="checkbox" id="meal" name="mealtype" value="Brunch">
+                  <input type="checkbox" id="meal2" name="mealtype" value="Brunch">
                   <label for="Brunch">Brunch</label>
                 </div>
               </div>
               
               <div class="row">
                 <div class="col">
-                  <input type="checkbox" id="meal" name="mealtype" value="Lunch">
+                  <input type="checkbox" id="meal3" name="mealtype" value="Lunch">
                   <label for="Lunch">Lunch</label>
                 </div>
                 <div class="col">
-                  <input type="checkbox" id="meal" name="mealtype" value="Dinner">
+                  <input type="checkbox" id="meal4" name="mealtype" value="Dinner">
                   <label for="Dinner">Dinner</label>
                 </div>
               </div>
@@ -97,26 +78,26 @@
               <legend>Food Type</legend>
               <div class="row">
                 <div class="col">
-                  <input type="checkbox" id="types" name="FoodType" value="Entree">
+                  <input type="checkbox" id="type1" name="FoodType" value="Entree">
                   <label for="Entree">Entree</label>
                 </div>
                 <div class="col">
-                  <input type="checkbox" id="types" name="FoodType" value="Sides">
+                  <input type="checkbox" id="type2" name="FoodType" value="Sides">
                   <label for="Sides">Sides</label>
                 </div>
                 <div class="col">
-                  <input type="checkbox" id="types" name="FoodType" value="Pizza">
+                  <input type="checkbox" id="type3" name="FoodType" value="Pizza">
                   <label for="Pizza">Pizza</label>
                 </div>
               </div>
               
               <div class="row">
                 <div class="col-4">
-                  <input type="checkbox" id="types" name="FoodType" value="Deli">
+                  <input type="checkbox" id="type4" name="FoodType" value="Deli">
                   <label for="Deli">Deli</label>
                 </div>
                 <div class="col-4">
-                  <input type="checkbox" id="types" name="FoodType" value="Dessert">
+                  <input type="checkbox" id="type5" name="FoodType" value="Dessert">
                   <label for="Dessert">Dessert</label>
                 </div>
               </div>
@@ -132,7 +113,6 @@
                 <input type="number" id="calories" min="0" class="form-control" />
                 <label class="form-label" for="calories">Max Calories</label>
               </div>
-              
             </div>
           </div>
 
@@ -140,7 +120,51 @@
 
       </fieldset>
     </div>
+
+    <div class="container">
+      <button class = "btn btn-primary btn-sm float-right" onclick="json_search(event)">SUBMIT</button>
+    </div>
+    
+
+    <div class="container mt-5" id="meal_data" style='display:none'>
+      <div class="row">
+        <div class="col">
+          <h2 class="text-center">The Anteatery</h2>
+
+          <div class="container">
+              <ul>
+                  <li v-for="meal in meals" v-if='meal.area=="TheAnteatery"'>
+                    <h5> {{meal.name}}</h5>
+                    <h6> {{meal.calories}} calories</h6>
+                    <p v-if='meal.blurb!=="None"'> {{meal.blurb}}</p>
+                  </li>
+              </ul>
+          </div>
+
+        </div>
+  
+        <div class="col">
+          <h2 class="text-center">Brandywine</h2>
+
+          <div class="container">
+              <ul>
+                  <li v-for="meal in meals" v-if='meal.area=="Brandywine"'>
+                    <h5> {{meal.name}}</h5>
+                    <h6> {{meal.calories}} calories</h6>
+                    <p v-if='meal.blurb!=="None"'> {{meal.blurb}}</p>
+                  </li>
+              </ul>
+          </div>
+  
+        </div>
+
+      </div>
       
+    
+    </div>
+    
+    
+    <script src="src/index2.js"></script>
 
 </body>
 </html>

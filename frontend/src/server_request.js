@@ -47,7 +47,6 @@ async function json_search(event)
     searchdata.append('types',get_type())
     searchdata.append('place',"")
     searchdata.append('meal',get_meal())
-
     /*
     searchdata.append('keyword',"eggs")
     searchdata.append('vegan',"false")
@@ -104,9 +103,4 @@ async function json_search(event)
             brunch: brunch_meal,
             dinner: dinner_meal
         }
-        });
-};
-
-
-
-
+});

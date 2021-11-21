@@ -1,9 +1,10 @@
 from flask import Flask
-from flask import request
+from flask import request, send_from_directory
 from flask.templating import render_template
 from flask_cors import CORS
 import sqlite3 as sl
 import datetime
+import requests
 
 app = Flask(__name__)
 CORS(app)
@@ -11,9 +12,9 @@ CORS(app)
 
 waitingOthers = []
 
-@app.route("/",methods=['GET'])
-def hi():
-    return {'amogus':'imposter'}
+@app.route("/<path:path>",methods=['GET'])
+def hi(path):
+    return send_from_directory('frontend',path)
 
 @app.route("/search/",methods=['GET'])
 def search():
@@ -43,7 +44,7 @@ def search():
     if meal:
         ms = meal.split(",")
 
-        constraints.append("(" + " OR ".join(f"meal={mealMap[m]}" for m in ms) + ")")
+        constraints.append("(" + " OR ".join(f"meal={mealMap[m.lower()]}" for m in ms) + ")")
     if keyword != "":
         constraints.append(f"name LIKE '%{keyword}%'")
     if foodtype != "":
@@ -77,6 +78,14 @@ def autocomplete():
     cur = conn.cursor()
     C = request.args.get('q')
 
-    query = f"SELECT DISTINCT name FROM menu WHERE name LIKE '{C}%' LIMIT 5"
+    query = f"SELECT DISTINCT name FROM menu WHERE name LIKE '%{C}%' LIMIT 5"
 
-    return list(cur.execute(query))
+    return {'body':list(i[0] for i in cur.execute(query))}
+
+apiKey = "24442074-8042608e9c23ab8f856de31c7"
+
+@app.route('/pics/',methods=['GET'])
+def fetchPicture():
+    q=request.args.get('q')
+    res = requests.get(f"https://pixabay.com/api/?key={apiKey}&q={q}&category=food&perPage=1")
+    return res.text
