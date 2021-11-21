@@ -44,7 +44,7 @@ def search():
     if meal:
         ms = meal.split(",")
 
-        constraints.append("(" + " OR ".join(f"meal={mealMap[m]}" for m in ms) + ")")
+        constraints.append("(" + " OR ".join(f"meal={mealMap[m.lower()]}" for m in ms) + ")")
     if keyword != "":
         constraints.append(f"name LIKE '%{keyword}%'")
     if foodtype != "":
