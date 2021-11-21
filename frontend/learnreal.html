@@ -43,12 +43,15 @@
                 </ul>
               </div>
           </div>--> 
-</div>
+
     </div>
+
       <div class="md-form active-purple active-purple-2 mb-3">
         <input class="form-control" type="text" placeholder="Search" aria-label="Search">
       </div>
+
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+      
       <button class = "btn btn-outline-primary btn-lg" data-toggle="collapse" data-target="#more-filters">More Options</button>
       <div id="more-filters" class="collapse">
         <fieldset>
@@ -63,39 +66,60 @@
           </div>
           <legend style = "font-size 10px">Meals</legend>
           <div>
-            <input type="checkbox" id="Breakfast" name="mealtype" value="Breakfast">
+            <input type="checkbox" id="meal" name="mealtype" value="Breakfast">
             <label for="Breakfast">Breakfast</label>
           </div>
           <div>
-            <input type="checkbox" id="Lunch" name="mealtype" value="Lunch">
+            <input type="checkbox" id="meal" name="mealtype" value="Lunch">
             <label for="Lunch">Lunch</label>
           </div>
           <div>
-            <input type="checkbox" id="Dinner" name="mealtype" value="Dinner">
+            <input type="checkbox" id="meal" name="mealtype" value="Dinner">
             <label for="Dinner">Dinner</label>
           </div>
           <legend style = "font-size 10px">Food Type</legend>
           <div>
-            <input type="checkbox" id="Entree" name="FoodType" value="Entree">
+            <input type="checkbox" id="types" name="FoodType" value="Entree">
             <label for="Entree">Entree</label>
           </div>
           <div>
-            <input type="checkbox" id="Sides" name="FoodType" value="Sides">
+            <input type="checkbox" id="types" name="FoodType" value="Sides">
             <label for="Sides">Sides</label>
           </div>
           <div>
-            <input type="checkbox" id="Pizza" name="FoodType" value="Pizza">
+            <input type="checkbox" id="types" name="FoodType" value="Pizza">
             <label for="Pizza">Pizza</label>
           </div>
           <div>
-            <input type="checkbox" id="Dessert" name="FoodType" value="Dessert">
+            <input type="checkbox" id="types" name="FoodType" value="Dessert">
             <label for="Dessert">Dessert</label>
           </div>
           <div>
-            <input type="checkbox" id="Deli" name="FoodType" value="Deli">
+            <input type="checkbox" id="types" name="FoodType" value="Deli">
             <label for="Deli">Deli</label>
           </div>
+          
+          <legend style = "font-size 10px">Calories</legend>
+          <div class="form-outline">
+            <input type="number" id="calories" min="0" class="form-control" />
+            <label class="form-label" for="calories">Max Calories</label>
+          </div>
+
         </fieldset>
       </div>
+
+      <button onclick="json_search(event)">SUBMIT</button>
+        <div id="meal_data">
+            <ol>
+                <li v-for="meal in meals">
+                    {{meal}}
+                  <h1> {{meal.name}}</h1>
+                  <h1> {{meal.calories}}</h1>
+                  <h1> {{meal.blurb}}</h1>
+                </li>
+            </ol>
+        </div>
+      
+        
     </body>
 </html>
